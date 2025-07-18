@@ -1,0 +1,5 @@
+main {
+   display: flex;
+   justify-content: center;
+   height: calc(100dvh - var(--navbar-height) - var(--navbar-height));
+}

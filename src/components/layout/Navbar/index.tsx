@@ -1,14 +1,13 @@
-import React from 'react';
-import './Navbar.scss';
-import Image from 'next/image';
-import JonennLogo from '@/assets/Jonenn.gif';
-import Linkedin from '@/assets/Linkedin.svg';
-import Github from '@/assets/Github.svg';
+import React from "react";
+import "./Navbar.scss";
+import Image from "next/image";
+import Linkedin from "@/assets/Linkedin.svg";
+import Github from "@/assets/Github.svg";
 
-const Navbar: React.FC = () => {
+const Navbar = () => {
    return (
       <nav className="navbar">
-         <div className="navbar__menu">
+         <div className="navbar__menu container">
             <ul className="navbar__list">
                <li className="navbar__item">
                   <Image
@@ -22,7 +21,7 @@ const Navbar: React.FC = () => {
             <ul className="navbar__list navbar__list--items">
                <li className="navbar__item">
                   <Image
-                     src={JonennLogo}
+                     src="https://res.cloudinary.com/dedihqcsy/image/upload/v1752815474/Jonenn_xo0ndy.gif"
                      alt="Jonenn's logo"
                      width={42}
                      height={42}

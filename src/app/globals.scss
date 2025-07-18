@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+   --navbar-height: 60px;
+   --footer-height: 60px;
+}
+
 html {
    line-height: 1.15; /* 1 */
    -webkit-text-size-adjust: 100%; /* 2 */
@@ -105,9 +110,9 @@ select {
 }
 
 button,
-[type='button'],
-[type='reset'],
-[type='submit'] {
+[type="button"],
+[type="reset"],
+[type="submit"] {
    -webkit-appearance: button;
 }
 
@@ -124,4 +129,9 @@ textarea {
 
 [hidden] {
    display: none;
+}
+
+.container {
+   max-width: 1280px;
+   width: 100%;
 }
