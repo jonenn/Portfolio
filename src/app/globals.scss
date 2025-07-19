@@ -17,9 +17,9 @@ body {
    font-family: Montserrat;
    background: #0c0b14;
    background: radial-gradient(
-      ellipse 60% 300px at 50% -15%,
+      ellipse 60% 300px at 50% -107px,
       #693cb2 0%,
-      #0c0b14 81%
+      #0c0b14 78%
    );
 }
 
@@ -140,4 +140,6 @@ textarea {
 .container {
    max-width: 1280px;
    width: 100%;
+   display: flex;
+   align-items: center;
 }
