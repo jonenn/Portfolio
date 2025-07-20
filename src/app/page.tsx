@@ -16,7 +16,7 @@ export default function Home() {
             // setTimeout(async () => {
             setHome(data);
             setLoading(false);
-            console.log(loading);
+            console.log(home);
             // }, 4000);
          } catch (err) {
             console.error(err);
@@ -26,7 +26,7 @@ export default function Home() {
 
       getAllHome();
    }, []);
-   return loading && home ? (
+   return loading ? (
       <Loader />
    ) : (
       <main>
