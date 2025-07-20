@@ -1,7 +1,10 @@
 main {
    display: flex;
    justify-content: center;
-   height: calc(100dvh - var(--navbar-height) - var(--navbar-height));
+   height: calc(
+      100dvh - var(--navbar-height) - var(--navbar-height) -
+         var(--techstack-height)
+   );
 }
 
 .hero {
@@ -21,7 +24,7 @@ main {
          background: radial-gradient(
             ellipse 50% 50% at 50% 50%,
             rgba(105, 60, 178, 30%) 0%,
-            #0c0b14 90%
+            transparent 90%
          );
       }
 

@@ -5,11 +5,13 @@
 :root {
    --navbar-height: 60px;
    --footer-height: 60px;
+   --techstack-height: 150px;
 }
 
 html {
    line-height: 1.15; /* 1 */
    -webkit-text-size-adjust: 100%; /* 2 */
+   background: #0c0b14;
 }
 
 body {
@@ -21,6 +23,7 @@ body {
       #693cb2 0%,
       #0c0b14 78%
    );
+   background-repeat: no-repeat;
 }
 
 main {
