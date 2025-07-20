@@ -13,11 +13,11 @@ export default function Home() {
       const getAllHome = async () => {
          try {
             const data = await getHome();
-            setTimeout(async () => {
-               setHome(data);
-               setLoading(false);
-               console.log(loading);
-            }, 4000);
+            // setTimeout(async () => {
+            setHome(data);
+            setLoading(false);
+            console.log(loading);
+            // }, 4000);
          } catch (err) {
             console.error(err);
             setLoading(false);
@@ -26,12 +26,12 @@ export default function Home() {
 
       getAllHome();
    }, []);
-   return loading ? (
+   return loading && home ? (
       <Loader />
    ) : (
-      <>
+      <main>
          <Hero />
          <TechStack />
-      </>
+      </main>
    );
 }

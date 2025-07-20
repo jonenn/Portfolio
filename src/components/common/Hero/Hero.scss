@@ -1,18 +1,9 @@
-main {
-   display: flex;
-   justify-content: center;
-   height: calc(
-      100dvh - var(--navbar-height) - var(--navbar-height) -
-         var(--techstack-height)
-   );
-   min-height: calc(
-      100dvh - var(--navbar-height) - var(--navbar-height) -
-         var(--techstack-height)
-   );
-}
-
 .hero {
    &__container {
+      height: calc(
+         100dvh - var(--navbar-height) - var(--navbar-height) -
+            var(--techstack-height)
+      );
       &--left,
       &--right {
          display: flex;

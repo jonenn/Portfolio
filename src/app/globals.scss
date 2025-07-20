@@ -24,14 +24,12 @@ body {
       #0c0b14 78%
    );
    background-repeat: no-repeat;
-   min-height: calc(
-      100dvh - var(--navbar-height) - var(--navbar-height) -
-         var(--techstack-height)
-   );
 }
 
 main {
-   display: block;
+   display: flex;
+   justify-content: center;
+   min-height: calc(100dvh - var(--navbar-height) - var(--navbar-height));
 }
 
 h1 {
