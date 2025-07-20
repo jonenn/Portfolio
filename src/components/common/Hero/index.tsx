@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import "./Hero.scss";
-import { getHero } from "@/api/hero";
+import { getHero } from "@/api/home";
 import { useEffect, useState } from "react";
 
 interface heroData {
@@ -18,8 +18,8 @@ export const Hero = () => {
       const getAllHeroes = async () => {
          try {
             const allHeroes = await getHero();
-            setHero(allHeroes.data);
-            console.log(allHeroes.data);
+            setHero(allHeroes.data.hero);
+            console.log(allHeroes.data.hero);
          } catch (err) {
             console.error("Failed to fetch hero data:", err);
          }
