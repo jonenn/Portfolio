@@ -5,8 +5,14 @@ import "./Hero.scss";
 import { getHero } from "@/api/hero";
 import { useEffect, useState } from "react";
 
+interface heroData {
+   title: string;
+   content: string;
+   image: string;
+}
+
 export const Hero = () => {
-   const [hero, setHero] = useState();
+   const [hero, setHero] = useState<heroData | null>();
 
    useEffect(() => {
       const getAllHeroes = async () => {
