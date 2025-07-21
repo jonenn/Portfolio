@@ -3,21 +3,67 @@
       min-height: var(--techstack-height);
       color: white;
       display: flex;
-      align-items: center;
+      align-items: start;
       flex-direction: column;
-      gap: 1.5rem;
+      justify-content: center;
+      gap: 1.8rem;
+      overflow: hidden;
+      width: 100%;
    }
+
    &__title {
+      width: 100%;
       font-weight: 700;
       margin: 0;
+      text-align: center;
+      font-size: 1.5rem;
    }
+
    &__block {
       display: flex;
-      gap: 1.2rem;
+      width: max-content;
+      animation: scroll-left 25s linear infinite;
    }
+
    &__shadow {
-      display: inherit;
+      display: flex;
+      width: 9rem;
       flex-direction: column;
       align-items: center;
+      justify-content: end;
+      background: radial-gradient(
+         ellipse 90% 72% at 50% 60%,
+         rgba(105, 60, 178, 0.6) 0%,
+         transparent 60%
+      );
+      gap: 1rem;
+      flex-shrink: 0;
+   }
+
+   &__images {
+      display: flex;
+      height: 100%;
+      align-items: center;
+      transform: scale(1.2);
+   }
+
+   &__image {
+      display: block;
+      height: auto;
+      width: 100%;
+   }
+
+   &__name {
+      text-align: center;
+      font-size: 0.9rem;
+   }
+}
+
+@keyframes scroll-left {
+   0% {
+      transform: translateX(0%);
+   }
+   100% {
+      transform: translateX(-50%);
    }
 }

@@ -5,13 +5,11 @@ const getHome = async (query = "") => {
 };
 
 const getHero = async () => {
-   const data = await getHome("?populate=hero");
-   console.log(data);
-   return data;
+   return await getHome("?populate=hero");
 };
 
 const getStack = async () => {
-   return await fetchData("?populate=tech");
+   return await getHome("?populate[techlist][populate]=*");
 };
 
 export { getHome, getHero, getStack };

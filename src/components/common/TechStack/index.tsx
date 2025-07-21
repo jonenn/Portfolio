@@ -24,8 +24,8 @@ export const TechStack = () => {
       const getAllStack = async () => {
          try {
             const data = await getStack();
-            setStack(data.data);
-            console.log(data.data);
+            setStack(data.data.techlist);
+            console.log(data.data.techlist);
          } catch (err) {
             console.error(err);
          }
@@ -37,18 +37,22 @@ export const TechStack = () => {
       <div className="techstack__container">
          <h3 className="techstack__title">{stack?.title}</h3>
          <div className="techstack__block">
-            {stack?.tech?.map((item) => (
-               <div className="techstack__shadow" key={item.id}>
-                  <Image
-                     className="techstack__image"
-                     src={item?.icon}
-                     alt={item.name}
-                     width={50}
-                     height={50}
-                  />
-                  <div className="techstack__name">{item?.name}</div>
-               </div>
-            ))}
+            {[...(stack?.tech || []), ...(stack?.tech || [])].map(
+               (item, index) => (
+                  <div className="techstack__shadow" key={index}>
+                     <div className="techstack__images">
+                        <Image
+                           className="techstack__image"
+                           src={item?.icon}
+                           alt={item.name}
+                           width={50}
+                           height={50}
+                        />
+                     </div>
+                     <div className="techstack__name">{item?.name}</div>
+                  </div>
+               )
+            )}
          </div>
       </div>
    );
