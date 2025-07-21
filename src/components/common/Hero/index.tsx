@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 
 interface heroData {
    title: string;
-   content: string;
+   description: string;
    image: string;
 }
 
@@ -40,7 +40,18 @@ export const Hero = () => {
             </div>
             <div className="hero__container--right">
                <h1 className="hero__title">{hero?.title}</h1>
-               <p className="hero__content">{hero?.content}</p>
+               <p className="hero__content">{hero?.description}</p>
+               <div className="hero__buttons">
+                  <button
+                     className="hero__button hero__button--primary"
+                     button-text="Portfolio"
+                  >
+                     <span className="shine"></span>
+                  </button>
+                  <button className="hero__button hero__button--secondary">
+                     Contact
+                  </button>
+               </div>
             </div>
          </div>
       )

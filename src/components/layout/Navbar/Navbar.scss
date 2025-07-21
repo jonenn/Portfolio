@@ -1,18 +1,16 @@
 .navbar {
    height: var(--navbar-height);
-   // background-color: red;
    display: flex;
    align-items: center;
    justify-content: center;
    font-family: var(--font-montserrat), sans-serif;
    font-weight: 500;
-   backdrop-filter: blur(720px); /* Core blur effect */
+   backdrop-filter: blur(720px);
    -webkit-backdrop-filter: blur(20px); /* For Safari support */
    background-color: rgba(34, 30, 64, 24%);
 
    &__menu {
       height: 100%;
-      // background-color: blue;
       display: inherit;
       align-items: center;
       justify-content: space-between;
@@ -26,6 +24,7 @@
       padding: 0;
       margin: 0;
       color: white;
+      cursor: pointer;
 
       &--items {
          width: 24%;

@@ -4,6 +4,7 @@
          100dvh - var(--navbar-height) - var(--navbar-height) -
             var(--techstack-height)
       );
+
       &--left,
       &--right {
          display: flex;
@@ -47,5 +48,130 @@
       color: white;
       margin: 0;
       line-height: 1.5rem;
+   }
+
+   &__buttons {
+      display: flex;
+      justify-content: center;
+      gap: 2.1rem;
+      border-radius: 2.1rem;
+   }
+
+   &__button {
+      padding: 0.9rem 2.1rem;
+      border: none;
+      outline: none;
+      position: relative;
+      z-index: 1;
+      border-radius: 2.1rem;
+      color: white;
+      cursor: pointer;
+      overflow: hidden;
+
+      &--primary {
+         background-image: linear-gradient(135deg, #6d39bf 15%, #0095dd 108%);
+
+         .shine {
+            position: absolute;
+            top: 0;
+            left: -75%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(
+               120deg,
+               rgba(255, 255, 255, 0.15) 0%,
+               rgba(255, 255, 255, 0.3) 50%,
+               rgba(255, 255, 255, 0.15) 100%
+            );
+            transform: skewX(-20deg);
+            pointer-events: none;
+            transition: left 0.75s ease;
+            z-index: 2;
+         }
+
+         &:hover .shine {
+            left: 130%;
+         }
+
+         &::before {
+            content: "";
+            position: absolute;
+            inset: 2px;
+            border-radius: 2.1rem;
+            background-color: #0c0b15;
+            z-index: -1;
+            transition: 150ms;
+         }
+
+         &::after {
+            content: attr(button-text);
+            background-image: linear-gradient(
+               135deg,
+               #6d39bf 15%,
+               #0095dd 108%
+            );
+            -webkit-background-clip: text;
+            color: transparent;
+            transition: 150ms;
+         }
+
+         &:hover {
+            background-position: right center;
+            transform: scale(1.08);
+            box-shadow: 0 0 20px rgba(109, 57, 191, 0.45),
+               0 0 40px rgba(0, 149, 221, 0.3);
+         }
+
+         &:hover::before {
+            opacity: 0%;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+         }
+         &:hover::after {
+            color: white;
+         }
+      }
+
+      &--secondary {
+         background-image: linear-gradient(135deg, #6d39bf 15%, #0095dd 108%);
+         padding: 0.9rem 2.265rem;
+
+         &:hover {
+            background-position: right center;
+            transform: scale(1.08);
+            box-shadow: 0 0 20px rgba(109, 57, 191, 0.45),
+               0 0 40px rgba(0, 149, 221, 0.3);
+         }
+
+         &:active {
+            transform: scale(0.97);
+            box-shadow: 0 0 10px rgba(0, 149, 221, 0.5);
+         }
+
+         &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -75%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(
+               120deg,
+               rgba(255, 255, 255, 0.15) 0%,
+               rgba(255, 255, 255, 0.3) 50%,
+               rgba(255, 255, 255, 0.15) 100%
+            );
+            transform: skewX(-20deg);
+            transition: all 0.5s ease;
+            pointer-events: none;
+         }
+
+         &:hover::before {
+            left: 130%;
+            transition: all 0.75s ease;
+         }
+      }
    }
 }
