@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import "./Hero.scss";
-import { getHero } from "@/api/home";
 import { useEffect, useState } from "react";
 
 interface heroData {
@@ -11,21 +10,17 @@ interface heroData {
    image: string;
 }
 
-export const Hero = () => {
+interface heroProps {
+   allHome: {
+      hero: heroData;
+   };
+}
+
+export const Hero = ({ allHome }: heroProps) => {
    const [hero, setHero] = useState<heroData | null>();
 
    useEffect(() => {
-      const getAllHeroes = async () => {
-         try {
-            const allHeroes = await getHero();
-            setHero(allHeroes.data.hero);
-            console.log(allHeroes.data.hero);
-         } catch (err) {
-            console.error("Failed to fetch hero data:", err);
-         }
-      };
-
-      getAllHeroes();
+      setHero(allHome.hero);
    }, []);
    return (
       hero && (

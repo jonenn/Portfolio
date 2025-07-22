@@ -3,18 +3,18 @@
 import { Hero } from "@/components/common/Hero";
 import { TechStack } from "@/components/common/TechStack";
 import { useEffect, useState } from "react";
-import { getHome } from "@/api/home";
+import { getAllHome } from "@/api/home";
 import { Loader } from "@/components/common/Loader";
 
 export default function Home() {
    const [home, setHome] = useState();
    const [loading, setLoading] = useState<boolean>(true);
    useEffect(() => {
-      const getAllHome = async () => {
+      const setAllHome = async () => {
          try {
-            const data = await getHome();
+            const data = await getAllHome();
             // setTimeout(async () => {
-            setHome(data);
+            setHome(data.data);
             setLoading(false);
             console.log(home);
             // }, 4000);
@@ -24,14 +24,16 @@ export default function Home() {
          }
       };
 
-      getAllHome();
+      setAllHome();
    }, []);
    return loading ? (
       <Loader />
    ) : (
-      <main>
-         <Hero />
-         <TechStack />
-      </main>
+      home && (
+         <main>
+            <Hero allHome={home} />
+            <TechStack allHome={home} />
+         </main>
+      )
    );
 }

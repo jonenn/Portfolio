@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import "./TechStack.scss";
-import { getStack } from "@/api/home";
 import Image from "next/image";
 
 interface techTypes {
@@ -17,21 +16,17 @@ interface stackData {
    tech: techTypes[];
 }
 
-export const TechStack = () => {
+interface stackProps {
+   allHome: {
+      techlist: stackData;
+   };
+}
+
+export const TechStack = ({ allHome }: stackProps) => {
    const [stack, setStack] = useState<stackData | null>();
-
+   console.log(allHome);
    useEffect(() => {
-      const getAllStack = async () => {
-         try {
-            const data = await getStack();
-            setStack(data.data.techlist);
-            console.log(data.data.techlist);
-         } catch (err) {
-            console.error(err);
-         }
-      };
-
-      getAllStack();
+      setStack(allHome.techlist);
    }, []);
    return (
       <div className="techstack__container">
