@@ -38,13 +38,13 @@
       );
       gap: 1rem;
       flex-shrink: 0;
+      margin-right: 2.1rem;
    }
 
    &__images {
       display: flex;
       height: 100%;
       align-items: center;
-      transform: scale(1.11);
    }
 
    &__image {
