@@ -2,10 +2,14 @@
 
 import { Loader } from '@/components/common/Loader';
 import { Project } from '@/components/common/Project';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Portfolio = () => {
    const [loading, setLoading] = useState(false);
+
+   // useEffect(()=>{
+
+   // },[])
 
    return loading ? (
       <Loader />

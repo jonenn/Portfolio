@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Project = () => {
    return (
       <div className="project__container">
@@ -16,7 +14,7 @@ const Project = () => {
                <div className="project__tech"></div>
             </div>
             <div className="project__labels">
-               <div className="project__caption"></div>
+               <div className="project__caption">Labels:</div>
                <div className="project__label"></div>
                <div className="project__label"></div>
             </div>
