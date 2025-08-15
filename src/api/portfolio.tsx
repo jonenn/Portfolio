@@ -1,7 +1,7 @@
 import { fetchData } from './strapi';
 
-const getPortfolio = async (query = '') => {
-   return await fetchData(`portfolio${query}`);
+const getAllPortfolio = async (query = '') => {
+   return await fetchData(`portfolio?populate=*`);
 };
 
-export { getPortfolio };
+export { getAllPortfolio };
