@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import { Hero } from "@/components/common/Hero";
-import { TechStack } from "@/components/common/TechStack";
-import { useEffect, useState } from "react";
-import { getAllHome } from "@/api/home";
-import { Loader } from "@/components/common/Loader";
+import { Hero } from '@/components/common/Hero';
+import { TechStack } from '@/components/common/TechStack';
+import { useEffect, useState } from 'react';
+import { getAllHome } from '@/api/home';
+import { Loader } from '@/components/common/Loader';
 
 export default function Home() {
    const [home, setHome] = useState();
@@ -25,7 +25,7 @@ export default function Home() {
       };
 
       setAllHome();
-   }, []);
+   }, [home]);
    return loading ? (
       <Loader />
    ) : (
