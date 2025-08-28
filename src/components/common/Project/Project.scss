@@ -1,0 +1,49 @@
+.project {
+   &__container {
+      display: flex;
+      width: 100%;
+      max-width: 1280px;
+   }
+
+   &__subcontainer {
+      display: flex;
+      width: 60%;
+   }
+
+   &__window {
+      display: inherit;
+      flex-direction: column;
+      border-radius: 16px;
+      overflow: hidden;
+      height: calc(400px + 36px);
+   }
+
+   &__header {
+      height: 36px;
+      background-color: red;
+   }
+
+   &__controller {
+      display: flex;
+      margin-left: 0.6rem;
+      align-items: center;
+      height: 32px;
+      width: auto;
+      gap: 0.3rem;
+      .project__button {
+         display: inherit;
+         border-radius: 99999px;
+         height: 16px;
+         // height: 100%;
+         // width: 100%;
+         width: 16px;
+         background-color: yellow;
+      }
+   }
+
+   &__description {
+      display: flex;
+      flex-direction: column;
+      width: 40%;
+   }
+}

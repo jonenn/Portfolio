@@ -25,7 +25,7 @@ export default function Home() {
       };
 
       setAllHome();
-   }, [home]);
+   }, []);
    return loading ? (
       <Loader />
    ) : (
