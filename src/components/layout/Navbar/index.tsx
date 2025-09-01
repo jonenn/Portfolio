@@ -3,8 +3,31 @@ import "./Navbar.scss";
 import Image from "next/image";
 import Linkedin from "@/assets/Linkedin.svg";
 import Github from "@/assets/Github.svg";
+import Link from "next/link";
+
+type navItemTypes = {
+   label: string;
+   path: string;
+};
+
+type navMenuTypes = navItemTypes[];
 
 const Navbar = () => {
+   const navMenu: navMenuTypes = [
+      {
+         label: "Home",
+         path: "/",
+      },
+      {
+         label: "Portfolio",
+         path: "/portfolio",
+      },
+      {
+         label: "About",
+         path: "/about",
+      },
+   ];
+
    return (
       <nav className="navbar">
          <div className="navbar__menu container">
@@ -27,9 +50,11 @@ const Navbar = () => {
                      height={42}
                   />
                </li>
-               <li className="navbar__item">Home</li>
-               <li className="navbar__item">Portfolio</li>
-               <li className="navbar__item">About</li>
+               {navMenu.map((item, index) => (
+                  <li key={index} className="navbar__item">
+                     <Link href={item.path}>{item?.label}</Link>
+                  </li>
+               ))}
             </ul>
             <ul className="navbar__list">
                <li className="navbar__item">
