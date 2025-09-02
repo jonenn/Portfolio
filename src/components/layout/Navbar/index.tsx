@@ -1,9 +1,9 @@
-import React from "react";
-import "./Navbar.scss";
-import Image from "next/image";
-import Linkedin from "@/assets/Linkedin.svg";
-import Github from "@/assets/Github.svg";
-import Link from "next/link";
+import React from 'react';
+import './Navbar.scss';
+import Image from 'next/image';
+import Linkedin from '@/assets/Linkedin.svg';
+import Github from '@/assets/Github.svg';
+import Link from 'next/link';
 
 type navItemTypes = {
    label: string;
@@ -15,16 +15,16 @@ type navMenuTypes = navItemTypes[];
 const Navbar = () => {
    const navMenu: navMenuTypes = [
       {
-         label: "Home",
-         path: "/",
+         label: 'Home',
+         path: '/',
       },
       {
-         label: "Portfolio",
-         path: "/portfolio",
+         label: 'Portfolio',
+         path: '/portfolio',
       },
       {
-         label: "About",
-         path: "/about",
+         label: 'About',
+         path: '/about',
       },
    ];
 
@@ -52,7 +52,7 @@ const Navbar = () => {
                </li>
                {navMenu.map((item, index) => (
                   <li key={index} className="navbar__item">
-                     <Link href={item.path}>{item?.label}</Link>
+                     <Link href={item?.path}>{item?.label}</Link>
                   </li>
                ))}
             </ul>

@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import './Project.scss';
+import background from '../../../assets/ProjectBG.svg';
 
 type ProjectTypes = {
    id: number;
@@ -22,6 +23,11 @@ const Project = ({ project }: PortfolioTypes) => {
       project && (
          <div className="project__container">
             <div className="project__subcontainer">
+               <Image
+                  src={background}
+                  className="project__background"
+                  alt="Project background"
+               />
                <div className="project__window">
                   <div className="project__header">
                      <div className="project__controller">

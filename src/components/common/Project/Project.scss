@@ -3,6 +3,7 @@
       display: flex;
       width: 100%;
       max-width: 1280px;
+      margin-top: 2.1rem;
    }
 
    &__subcontainer {
@@ -10,34 +11,58 @@
       width: 60%;
    }
 
+   &__background {
+      position: absolute;
+      margin-left: -3rem;
+      z-index: 1;
+   }
+
    &__window {
       display: inherit;
       flex-direction: column;
       border-radius: 16px;
+      margin-top: 2.4rem;
       overflow: hidden;
       height: calc(400px + 36px);
+      z-index: 2;
+      background: #0e1a2c;
    }
 
    &__header {
       height: 36px;
-      background-color: red;
+      background: #0095dd;
+      background: linear-gradient(
+         90deg,
+         #0d2035 0%,
+         rgb(0, 0, 0, 0.15) 52%,
+         #0d2035 100%
+      );
    }
 
    &__controller {
       display: flex;
-      margin-left: 0.6rem;
+      margin-left: 0.9rem;
       align-items: center;
-      height: 32px;
+      height: 36px;
       width: auto;
       gap: 0.3rem;
       .project__button {
          display: inherit;
          border-radius: 99999px;
-         height: 16px;
-         // height: 100%;
-         // width: 100%;
-         width: 16px;
-         background-color: yellow;
+         height: 11.1px;
+         width: 11.1px;
+         background-color: #fd5754;
+         border: 1px solid #d64c4a;
+
+         &--minimize {
+            background-color: #febb40;
+            border: 1px solid #da9f31;
+         }
+
+         &--maximize {
+            background-color: #34c846;
+            border: 1px solid #27aa35;
+         }
       }
    }
 
