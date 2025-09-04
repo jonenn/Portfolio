@@ -47,7 +47,7 @@ const Project = ({ project }: PortfolioTypes) => {
                </div>
             </div>
             <div className="project__description">
-               <h3 className="project__year">year</h3>
+               <h3 className="project__year">{project.year}</h3>
                <h4 className="project__title">{project.title}</h4>
                <p className="project__content">{project.description}</p>
                <div className="project__buttons">
