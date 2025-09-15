@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import './Project.scss';
 import background from '../../../assets/ProjectBG.svg';
+import Link from 'next/link';
 
 type ProjectTypes = {
    id: number;

@@ -1,13 +1,18 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import "./Hero.scss";
-import { useEffect, useState } from "react";
+import Image from 'next/image';
+import './Hero.scss';
+import { useEffect, useState } from 'react';
+import Link from 'next/link';
 
 interface heroData {
    title: string;
    description: string;
    image: string;
+   buttonUrl1: string;
+   buttonUrl2: string;
+   buttonText1: string;
+   buttonText2: string;
 }
 
 interface heroProps {
@@ -37,15 +42,19 @@ export const Hero = ({ allHome }: heroProps) => {
                <h1 className="hero__title">{hero?.title}</h1>
                <p className="hero__content">{hero?.description}</p>
                <div className="hero__buttons">
-                  <button
-                     className="hero__button hero__button--primary"
-                     button-text="Portfolio"
-                  >
-                     <span className="shine"></span>
-                  </button>
-                  <button className="hero__button hero__button--secondary">
-                     Contact
-                  </button>
+                  <Link href={hero?.buttonUrl1}>
+                     <button
+                        className="hero__button hero__button--primary"
+                        button-text={hero?.buttonText1}
+                     >
+                        <span className="shine"></span>
+                     </button>
+                  </Link>
+                  <Link href={hero?.buttonUrl2}>
+                     <button className="hero__button hero__button--secondary">
+                        {hero?.buttonText1}
+                     </button>
+                  </Link>
                </div>
             </div>
          </div>
